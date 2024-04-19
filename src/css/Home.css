@@ -1,0 +1,21 @@
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.column {
+    flex-basis: 30%;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.column h2 {
+    margin-bottom: 10px;
+}
+
+.column p {
+    margin-bottom: 0;
+}
