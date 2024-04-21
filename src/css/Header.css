@@ -39,16 +39,16 @@
 .dropdown {
     position: relative;
     display: inline-block;
-  }
-  
-  .dropdown-toggle {
+}
+
+.dropdown-toggle {
     background-color: #f8f9fa;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-  }
-  
-  .dropdown-menu {
+}
+
+.dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
@@ -56,19 +56,18 @@
     background-color: #fff;
     border: 1px solid #ccc;
     border-top: none;
-  }
-  
-  .dropdown-menu ul {
+}
+
+.dropdown-menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
-  }
-  
-  .dropdown-menu ul li {
+}
+
+.dropdown-menu ul li {
     padding: 10px 20px;
-  }
-  
-  .dropdown-menu ul li:hover {
+}
+
+.dropdown-menu ul li:hover {
     background-color: #f0f0f0;
-  }
-  
+}
