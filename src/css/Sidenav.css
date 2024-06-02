@@ -1,0 +1,50 @@
+.sidebar {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    height: 75vh;
+    overflow-y: auto;
+}
+
+.menu-item {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #d5eeeb;
+    margin-bottom: 5px;
+}
+
+.menu-item:hover {
+    background-color: #ccc;
+}
+
+.sub-menu .menu-item {
+    padding-left: 20px;
+    background-color: #ebe4e4;
+}
+
+.sub-menu .menu-item:hover {
+    padding-left: 20px;
+    background-color: #98e7a4;
+}
+
+.arrow {
+    float: right;
+    transition: transform 0.3s;
+}
+
+.arrow.active {
+    transform: rotate(180deg);
+}
+
+svg:not(:root).svg-inline--fa,
+svg:not(:host).svg-inline--fa {
+    overflow: visible;
+    box-sizing: content-box;
+    margin-right: 10px;
+}
+
+.closeicon {
+    height: 24px;
+    width: 24px;
+    ;
+}

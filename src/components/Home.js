@@ -1,51 +1,56 @@
+import { faBookOpen, faCoins, faComment, faFileAlt, faGraduationCap, faImages, faPen, faRoad, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import '../css/Home.css'; // Import CSS file
+import { useNavigate } from "react-router-dom";
+import '../css/Home.css';
+import '../css/UserInterfaceComponent.css';
 
 function Home() {
+  const navigate = useNavigate();
+  const handleOptionClick = (option) => {
+    if (option === 'uic') {
+      navigate('/uic');
+    }
+    if (option === 'contact-form') {
+      navigate('contact-form');
+    }
+    if (option === 'fileupload-form') {
+      navigate('fileupload-form');
+    }
+
+  }
+
   return (
-    <div className="home">
-      <div className="column">
-        <h2>Column 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae suscipit mauris.</p>
+    <div className="container home">
+      <div className="column"  onClick={() => handleOptionClick("uic")}> 
+      <FontAwesomeIcon icon={faFileAlt} className="custom-icon" />
       </div>
       <div className="column">
-        <h2>Column 2</h2>
-        <p>Nullam fermentum lectus vitae libero suscipit fermentum. Sed sed feugiat metus.</p>
+        <FontAwesomeIcon icon={faGraduationCap} className="custom-icon" />
       </div>
       <div className="column">
-        <h2>Column 3</h2>
-        <p>Aliquam sit amet urna non tellus consequat dignissim.</p>
+        <FontAwesomeIcon icon={faBookOpen} className="custom-icon" />
       </div>
 
-
       <div className="column">
-        <h2>Column 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae suscipit mauris.</p>
+        <FontAwesomeIcon icon={faPen} className="custom-icon" />
       </div>
       <div className="column">
-        <h2>Column 2</h2>
-        <p>Nullam fermentum lectus vitae libero suscipit fermentum. Sed sed feugiat metus.</p>
+        <FontAwesomeIcon icon={faCoins} className="custom-icon" />
       </div>
       <div className="column">
-        <h2>Column 3</h2>
-        <p>Aliquam sit amet urna non tellus consequat dignissim.</p>
-      </div>
-
-
-      <div className="column">
-        <h2>Column 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae suscipit mauris.</p>
+        <FontAwesomeIcon icon={faShoppingCart} className="custom-icon" />
       </div>
       <div className="column">
-        <h2>Column 2</h2>
-        <p>Nullam fermentum lectus vitae libero suscipit fermentum. Sed sed feugiat metus.</p>
+        <FontAwesomeIcon icon={faImages} className="custom-icon" />
       </div>
       <div className="column">
-        <h2>Column 3</h2>
-        <p>Aliquam sit amet urna non tellus consequat dignissim.</p>
+        <FontAwesomeIcon icon={faComment} className="custom-icon" />
+      </div>
+      <div className="column">
+        <FontAwesomeIcon icon={faRoad} className="custom-icon" />
       </div>
     </div>
-    
   );
 };
 

@@ -1,34 +1,41 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import '../css/Login.css'; // Import CSS file
-
-function Login() {
+import '../css/Login.css'; // Import your CSS file for styling
+import {useNavigate } from "react-router-dom";
+function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    // Add your login logic here
-    console.log('Logging in with:', email, password);
+
+  const handleLogin = () => {
+    if (email === 'prabhu.singh79@gmail.com' && password === 'password') {
+      localStorage.setItem('isAuthenticated', true);
+      navigate('layout');
+      
+    } else {
+      localStorage.setItem('isAuthenticated', false);
+      setError('Invalid email or password');
+    }
   };
 
   return (
     <div className="login-container">
       <h2>Login</h2>
-      <form onSubmit={handleLogin}>
+      {error && <div className="error-message">{error}</div>}
+      <form onSubmit={(e) => e.preventDefault()}>
         <div className="form-group">
-          <label>Email:</label>
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          <label>Email</label>
+          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div className="form-group">
-          <label>Password:</label>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          <label>Password</label>
+          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </div>
-        <button type="submit" className="btn-login">Login</button>
+        <button type="submit" onClick={handleLogin}>Login</button>
       </form>
-      <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
     </div>
   );
-};
+}
 
-export default Login;
+export default LoginPage;

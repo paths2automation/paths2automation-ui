@@ -2,20 +2,49 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-bottom: 25px;
 }
 
 .column {
-    flex-basis: 30%;
+    cursor: pointer;
+    background-color: #fff;
+    flex-basis: 33%;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
     border: 1px solid #ccc;
     border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.column:hover {
+    cursor: pointer;
+    background-color: #7fcfa6;
+    flex-basis: 33%;
+    padding: 20px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .column h2 {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 .column p {
     margin-bottom: 0;
+}
+
+.custom-icon {
+    width: 96px;
+    height: 96px;
+    opacity: 0.2;
+}
+
+.column .uic {
+    background-color: aqua;
 }

@@ -1,0 +1,28 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensure layout takes up full viewport height */
+}
+
+header {
+    background-color: #333;
+    /* Example background color for header */
+    color: white;
+    /* Example text color for header */
+    padding: 20px;
+}
+
+main {
+    flex-grow: 1;
+    /* Allow main content to grow to fill remaining space */
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    /* Example background color for footer */
+    color: white;
+    /* Example text color for footer */
+    padding: 20px;
+}

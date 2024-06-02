@@ -4,7 +4,7 @@ import '../css/Footer.css'; // Import CSS file
 function Footer() {
   return (
     <div className="footer-bottom">
-    <p>&copy; 2023 Path2Automation. All Rights Reserved.</p>
+    <p>&copy; 2023 Paths2Automation. All Rights Reserved.</p>
   </div>
   );
 };
