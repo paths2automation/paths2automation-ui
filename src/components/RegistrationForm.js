@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
 import '../css/RegistrationForm.css';
+import moment from "moment";
 import PhoneInput from 'react-phone-number-input';
-import DatePicker from "react-datepicker";
 function EntryForm() {
-    const [startDate, setStartDate] = useState(new Date());
+
+        const [value, setValue] = useState(moment().format('YYYY-MM-DD'));
+        const onChangeDate = (date) => {
+          const newDate = setValue(moment(new Date(date.target.value)).format("YYYY-MM-DD"));
+          setValue(newDate);
+          console.log(newDate); //always log "1970-01-01"
+        };
+
     const today=new Date();
+
+
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -131,7 +140,11 @@ function EntryForm() {
                         <label>Date of Birth</label>
                     </div>
                     <div className="col-sm-6">
-                        <DatePicker  yearPlaceholder className='mr-sm-2 form-control' name="dob" selected={startDate} onChange={(date) => setStartDate(date)} maxDate={today} showYearDropdown scrollableYearDropdown yearDropdownItemNumber={30} placeholderText="Select a date" />
+                    <input
+        type="date"
+        value={value}
+        onChange={(e)=>onChangeDate(e)}
+     />
                         </div></div>
                 <div className="row">
                     <div className="col-sm-2">
